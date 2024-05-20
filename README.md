@@ -31,9 +31,9 @@ AJOUT D'UN CLIENT
 Recherche d'un client
 ![image](https://github.com/AitWaarabImad/Projet-Final-JEE/assets/88889092/1f307501-1be9-4474-9130-851b24daa686)
 
-Realistaion d'un credit
+Realistaion d'un debit
 ![image](https://github.com/AitWaarabImad/Projet-Final-JEE/assets/88889092/23e33d6e-ac9b-4b0a-a277-b88181bd13db)
-Verification du credit
+Verification du debit
 ![image](https://github.com/AitWaarabImad/Projet-Final-JEE/assets/88889092/d69bfcf6-2f94-46ba-82b0-dcbd024e0d74)
 
 
