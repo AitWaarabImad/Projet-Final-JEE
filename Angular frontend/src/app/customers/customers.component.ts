@@ -19,6 +19,7 @@ export class CustomersComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchFormGroup=this.fb.group({
+      // Initializing the search form group with a single form control for the keyword.
       keyword : this.fb.control("")
     });
     this.handleSearchCustomers();
@@ -26,6 +27,7 @@ export class CustomersComponent implements OnInit {
   handleSearchCustomers() {
     let kw=this.searchFormGroup?.value.keyword;
     this.customers=this.customerService.searchCustomers(kw).pipe(
+      // Handling errors using catchError and returning an observable with the error.
       catchError(err => {
         this.errorMessage=err.message;
         return throwError(err);
@@ -35,7 +37,7 @@ export class CustomersComponent implements OnInit {
 
   handleDeleteCustomer(c: Customer) {
     let conf = confirm("Are you sure?");
-    if(!conf) return;
+    if(!conf) return;// If not confirmed, exit the method.
     this.customerService.deleteCustomer(c.id).subscribe({
       next : (resp) => {
         this.customers=this.customers.pipe(

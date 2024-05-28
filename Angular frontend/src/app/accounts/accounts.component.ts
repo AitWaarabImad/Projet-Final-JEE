@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {AccountsService} from "../services/accounts.service";
 import {catchError, Observable, throwError} from "rxjs";
 import {AccountDetails} from "../model/account.model";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-accounts',
@@ -10,6 +11,7 @@ import {AccountDetails} from "../model/account.model";
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
+  // ! : Dire au compilateur je m'en occupe de l'initialisation des variables.
   accountFormGroup! : FormGroup;
   currentPage : number =0;
   pageSize : number =5;
@@ -17,7 +19,9 @@ export class AccountsComponent implements OnInit {
   operationFromGroup! : FormGroup;
   errorMessage! :string ;
 
-  constructor(private fb : FormBuilder, private accountService : AccountsService) { }
+  constructor(private fb : FormBuilder,
+              private accountService : AccountsService,
+              public authService:AuthService) { }
 
   ngOnInit(): void {
     this.accountFormGroup=this.fb.group({
